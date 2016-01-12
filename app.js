@@ -30,7 +30,7 @@ var uriString =
         process.env.MONGOHQ_URL ||
         'mongodb://localhost/HelloMongoose';
 
-mongoose.connect('mongodb://gregg:test@ds057954.mongolab.com:57954/alamofire-db');
+mongoose.connect('mongodb://alamouser:password@ds043605.mongolab.com:43605/alamofire-db');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

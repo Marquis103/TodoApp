@@ -1,8 +1,8 @@
 
 
 var mongoose = require('mongoose'),
-    Todo = mongoose.model('employees')
-    //,Address = mongoose.model('Address');
+    Todo = mongoose.model('todo')
+    
 /**
  * Get Todos Listing
  */
@@ -24,14 +24,14 @@ exports.findById = function(req,res){
 };
 
 exports.newTodo = function(req,res){
-    var emp = new Todo(req.body);
+    var todo = new Todo(req.body);
 
-    emp.save(function(err){
+    todo.save(function(err){
         if (err) {
             res.send('Error occurred');
             return console.log(err);
         }
-        res.send(emp);
+        res.send(todo);
     });
 }
 
@@ -63,7 +63,7 @@ exports.update = function(req,res){
 
 exports.delete = function(req,res){
     Todo.findById( req.params.id, function( err, todo ) {
-        if(!employee){
+        if(!todo){
             return res.send('Todo not found with given id');
         }
         todo.remove(function(err){
