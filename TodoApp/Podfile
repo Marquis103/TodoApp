@@ -1,0 +1,9 @@
+platform :ios, '9.2'
+use_frameworks!
+
+target 'TodoApp' do
+
+pod 'Alamofire'
+
+end
+
